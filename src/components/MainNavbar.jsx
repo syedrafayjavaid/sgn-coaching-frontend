@@ -75,7 +75,7 @@ const MainNavbar = () => {
                 </Link>
               </Typography>
               <Typography
-                onClick={() => navigate("/coaches")}
+                onClick={() => navigate("https://sgn-coaching-frontend.onrender.com/coaches")}
                 variant="subtitle1"
                 my={3}
               >
