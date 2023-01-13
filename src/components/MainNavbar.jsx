@@ -14,6 +14,7 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useNavigate } from "react-router-dom";
 
 import coachingLogo from "../assets/images/coaching-logo.png";
 
@@ -21,6 +22,8 @@ const pages = ["coaching platform", "find a coach", "pricing", "login"];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const MainNavbar = () => {
+
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -83,9 +86,9 @@ const MainNavbar = () => {
                   coaching platform
                 </Link>
               </Typography>
-              <Typography variant="subtitle1" my={3}>
+              <Typography variant="subtitle1" onClick={() => navigate('/coaches')} my={3}>
                 <Link
-                  href={'/coaches'}
+
                   sx={{
                     textDecoration: "none",
                     color: "#1d1d51",

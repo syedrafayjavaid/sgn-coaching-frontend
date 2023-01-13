@@ -1,4 +1,4 @@
-const env = 'local'
+const env = 'prod'
 
 let config = {
 
@@ -7,7 +7,7 @@ let config = {
         base_url: 'http://localhost:3005'
     },
     prod: {
-        base_url: 'https://sms-sgn-backend.onrender.com'
+        base_url: 'https://sgn-coaching-frontend.onrender.com'
     },
     office: {
         base_url: ''
