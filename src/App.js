@@ -7,10 +7,10 @@ import SigninSignup from "./components/Pages/SigninSignup";
 function App() {
   return (
     <Routes>
-      <Route exact path="/" element={<CoachesLP />} />
-      <Route exact path="/coaches" element={<CoachesListing />} />
-      <Route exact path="/coachDetail" element={<CoachDetails />} />
-      <Route exact path="/login" element={<SigninSignup />} />
+      <Route path="/" element={<CoachesLP />} />
+      <Route path="/coaches" element={<CoachesListing />} />
+      <Route path="/coachDetail" element={<CoachDetails />} />
+      <Route path="/login" element={<SigninSignup />} />
     </Routes>
   );
 }
