@@ -13,6 +13,7 @@ const CoachesListing = () => {
 
   // Get all coaches
   const getCoaches = () => {
+    console.log("The url has", config.base_url);
     axios.get(`${config.base_url}/api/v1/coaches`)
       .then(res => {
         setData(res.data.data)
