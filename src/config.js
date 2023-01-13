@@ -1,4 +1,4 @@
-const env = 'prod'
+const env = 'local'
 
 let config = {
 

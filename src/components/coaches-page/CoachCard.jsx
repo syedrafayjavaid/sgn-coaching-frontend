@@ -10,7 +10,6 @@ import mahastiImg from "../../assets/images/mahasti-image.jpg";
 import { useNavigate } from "react-router-dom";
 
 const CoachCard = (props) => {
-
   const { coachData } = props;
 
   const navigate = useNavigate();
@@ -49,7 +48,9 @@ const CoachCard = (props) => {
                     fontWeight={600}
                     textTransform="capitalize"
                   >
-                    {coachData.firstName && coachData.lastName ? `${coachData.firstName}   ${coachData.lastName}` : ""}
+                    {coachData.firstName && coachData.lastName
+                      ? `${coachData.firstName}   ${coachData.lastName}`
+                      : ""}
                   </Typography>
                 </Grid>
 
@@ -58,8 +59,11 @@ const CoachCard = (props) => {
                     <Grid Item>
                       <Chip
                         icon={<LocationOn sx={{ fontSize: "18px" }} />}
-                        label={coachData.country && coachData.state && coachData.city
-                          ? `${coachData.state} ,  ${coachData.country} ,  ${coachData.city}` : ""}
+                        label={
+                          coachData.country && coachData.state && coachData.city
+                            ? `${coachData.state} ,  ${coachData.country} ,  ${coachData.city}`
+                            : ""
+                        }
                         sx={{
                           fontWeight: 500,
                           textTransform: "uppercase",
@@ -70,9 +74,7 @@ const CoachCard = (props) => {
                     <Grid Item marginLeft={3}>
                       <Chip
                         icon={<Person sx={{ fontSize: "18px" }} />}
-                        label={
-                          12 + " years of experience"
-                        }
+                        label={12 + " years of experience"}
                         sx={{
                           fontWeight: 500,
                           textTransform: "capitalize",
@@ -136,7 +138,9 @@ const CoachCard = (props) => {
                       fontWeight: 600,
                       textAlign: "right",
                     }}
-                    onClick={() => navigate('/coachDetail', { state: coachData?._id })}
+                    onClick={() =>
+                      navigate("/coachDetail", { state: coachData?._id })
+                    }
                     size="small"
                     endIcon={<ArrowForwardIos style={{ fontSize: "15px" }} />}
                   >

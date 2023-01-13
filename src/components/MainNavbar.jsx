@@ -14,33 +14,21 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 import coachingLogo from "../assets/images/coaching-logo.png";
 
-const pages = ["coaching platform", "find a coach", "pricing", "login"];
-// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
 const MainNavbar = () => {
-
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  // const handleOpenUserMenu = (event) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-  // const handleCloseUserMenu = () => {
-  //   setAnchorElUser(null);
-  // };
 
   return (
     <>
@@ -55,7 +43,7 @@ const MainNavbar = () => {
             {/* Logo for large displays */}
             <Link
               component="a"
-              href="/"
+              onClick={() => navigate("/")}
               sx={{
                 mr: 3,
                 display: { xs: "none", md: "flex" },
@@ -69,11 +57,11 @@ const MainNavbar = () => {
             </Link>
 
             {/* Menu for large displays */}
-            {/* <Box sx={{ flexGrow: 0 }}> */}
+
             <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
               <Typography variant="subtitle1" my={3}>
                 <Link
-                  href={'#'}
+                  href={"#"}
                   sx={{
                     textDecoration: "none",
                     color: "#1d1d51",
@@ -86,9 +74,12 @@ const MainNavbar = () => {
                   coaching platform
                 </Link>
               </Typography>
-              <Typography variant="subtitle1" onClick={() => navigate('/coaches')} my={3}>
+              <Typography
+                onClick={() => navigate("/coaches")}
+                variant="subtitle1"
+                my={3}
+              >
                 <Link
-
                   sx={{
                     textDecoration: "none",
                     color: "#1d1d51",
@@ -103,7 +94,7 @@ const MainNavbar = () => {
               </Typography>
               <Typography variant="subtitle1" my={3}>
                 <Link
-                  href={'#'}
+                  href={"#"}
                   sx={{
                     textDecoration: "none",
                     color: "#1d1d51",
@@ -118,7 +109,7 @@ const MainNavbar = () => {
               </Typography>
               <Typography variant="subtitle1" my={3}>
                 <Link
-                  href={'#'}
+                  href={"#"}
                   sx={{
                     textDecoration: "none",
                     color: "#1d1d51",
@@ -131,9 +122,13 @@ const MainNavbar = () => {
                   pricing
                 </Link>
               </Typography>
-              <Typography variant="subtitle1" my={3}>
+              <Typography
+                variant="subtitle1"
+                my={3}
+                onClick={() => navigate("/login")}
+              >
                 <Link
-                  href={'#'}
+                  on
                   sx={{
                     textDecoration: "none",
                     color: "#1d1d51",
@@ -146,7 +141,6 @@ const MainNavbar = () => {
                   login
                 </Link>
               </Typography>
-
 
               <Button
                 sx={{ color: "white", my: 3, ml: 2, borderRadius: 5 }}
@@ -161,7 +155,7 @@ const MainNavbar = () => {
               variant="h5"
               noWrap
               component="a"
-              href="/"
+              onClick={() => navigate("/")}
               sx={{
                 mr: 2,
                 display: { xs: "flex", md: "none" },
@@ -207,11 +201,9 @@ const MainNavbar = () => {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
-                ))}
+                <MenuItem key="page" onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">page</Typography>
+                </MenuItem>
               </Menu>
             </Box>
           </Toolbar>
