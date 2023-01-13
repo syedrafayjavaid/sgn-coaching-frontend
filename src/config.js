@@ -7,7 +7,7 @@ let config = {
         base_url: 'http://localhost:3005'
     },
     prod: {
-        base_url: 'https://sgn-coaching-frontend.onrender.com'
+        base_url: 'https://sgn-coaching-backend-production.up.railway.app'
     },
     office: {
         base_url: ''
